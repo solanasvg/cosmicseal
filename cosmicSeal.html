@@ -1,0 +1,150 @@
+<html><head><base href="https://alchemist-journey.quantum-matrix.eos/unreal-engine/5.5/new-horizons/celestial-path/epilogue/">
+<title>Celestial Alchemist: Cosmic Commitment</title>
+<style>
+  body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Beaufort for LOL', 'Rajdhani', sans-serif;
+    background: linear-gradient(135deg, #0A1622 0%, #1E2A3B 50%, #2C3E50 100%);
+    color: #C8AA6E;
+    overflow-x: hidden;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+  }
+  h1, h2 {
+    color: #E6C054;
+    text-shadow: 0 0 10px rgba(230, 192, 84, 0.5);
+  }
+  p {
+    font-size: 1.2em;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    text-align: justify;
+  }
+  .cosmic-seal {
+    width: 300px;
+    height: 300px;
+    margin: 40px auto;
+    position: relative;
+    animation: seal-appear 2s ease-out;
+  }
+  @keyframes seal-appear {
+    0% { transform: scale(0) rotate(180deg); opacity: 0; }
+    100% { transform: scale(1) rotate(0deg); opacity: 1; }
+  }
+  .cosmic-energy {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: conic-gradient(from 0deg, #E6C054, #C8AA6E, #E6C054);
+    animation: energy-pulse 4s linear infinite;
+  }
+  @keyframes energy-pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+  }
+  .alchemist-symbol {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    height: 80%;
+  }
+  .commitment-text {
+    background: rgba(200, 170, 110, 0.1);
+    border: 2px solid #C8AA6E;
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 20px;
+    font-style: italic;
+  }
+  .star {
+    position: absolute;
+    background: #E6C054;
+    border-radius: 50%;
+    animation: twinkle 1s infinite alternate;
+  }
+  @keyframes twinkle {
+    0% { opacity: 0.5; }
+    100% { opacity: 1; }
+  }
+</style>
+</head>
+<body>
+  <div class="container">
+    <h1>Cosmic Commitment Sealed</h1>
+    
+    <div class="cosmic-seal">
+      <div class="cosmic-energy"></div>
+      <svg class="alchemist-symbol" viewBox="0 0 100 100">
+        <circle cx="50" cy="50" r="45" fill="none" stroke="#0A1622" stroke-width="2"/>
+        <path d="M50 10 L90 90 L10 90 Z" fill="none" stroke="#0A1622" stroke-width="2"/>
+        <circle cx="50" cy="50" r="5" fill="#0A1622"/>
+      </svg>
+    </div>
+
+    <p>
+      As you commit your intentions to the cosmos, a profound shift occurs in the fabric of reality around you. The air shimmers with an otherworldly light, and you feel the weight of your decision resonate through time and space.
+    </p>
+
+    <div class="commitment-text">
+      <p id="alchemist-commitment">
+        "I, [Alchemist Name], Celestial Alchemist of Runeterra, do hereby commit my knowledge, skills, and very essence to the pursuit of [Alchemical Goal]. May the stars guide my path and the cosmic forces empower my endeavors."
+      </p>
+    </div>
+
+    <p>
+      Your commitment has been etched into the cosmic ledger, a binding contract between you and the universe itself. The path ahead may be challenging, but you are now aligned with the celestial forces that govern reality.
+    </p>
+
+    <h2>The Journey Continues</h2>
+    <p>
+      With your intentions set and your commitment made, you stand at the threshold of a new chapter in your cosmic odyssey. The knowledge of Mount Targon courses through your veins, and the infinite possibilities of the universe stretch out before you.
+    </p>
+    <p>
+      Remember, Celestial Alchemist, that each step you take, each formula you devise, and each revelation you uncover will ripple across the cosmos. Your journey is no longer just your own - it is intertwined with the very fabric of existence.
+    </p>
+    <p>
+      May your alchemical pursuits bring balance to Runeterra and beyond. The stars await your next move.
+    </p>
+  </div>
+
+  <script>
+    // Generate twinkling stars
+    function createStars() {
+      const container = document.body;
+      for (let i = 0; i < 50; i++) {
+        const star = document.createElement('div');
+        star.className = 'star';
+        star.style.width = `${Math.random() * 3}px`;
+        star.style.height = star.style.width;
+        star.style.left = `${Math.random() * 100}%`;
+        star.style.top = `${Math.random() * 100}%`;
+        star.style.animationDuration = `${Math.random() * 2 + 1}s`;
+        container.appendChild(star);
+      }
+    }
+
+    // Retrieve and display the alchemist's commitment
+    function displayCommitment() {
+      const name = localStorage.getItem('alchemistName') || '[Alchemist Name]';
+      const goal = localStorage.getItem('alchemicalGoal') || '[Alchemical Goal]';
+      const commitmentText = document.getElementById('alchemist-commitment');
+      commitmentText.textContent = commitmentText.textContent
+        .replace('[Alchemist Name]', name)
+        .replace('[Alchemical Goal]', goal);
+    }
+
+    window.onload = function() {
+      createStars();
+      displayCommitment();
+    };
+  </script>
+</body></html>
